@@ -20,12 +20,16 @@ class CurrentStory extends AppElement
         Loading…`
     }
 
+    const start = !this.story?.length
+    const end = this.story?.length >= 2
+
     return html`
       ${super.stylesTemplate()}
       <section>
-        <h2>The story in the making</h2>
+        <h2>
+          ${start ? 'Start a new story ✨' : 'The story in the making 📖'}</h2>
         <one-story .story=${this.story}></one-story>
-        <story-form .storyId=${this.storyId} ?last=${this.story?.length >= 2 } />
+        <story-form .storyId=${this.storyId} ?last=${end} />
       </section>
     `
   }
