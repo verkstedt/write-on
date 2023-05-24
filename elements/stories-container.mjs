@@ -37,7 +37,7 @@ class StoriesContainer extends AppElement
     const lastStoryId = Math.max(...Object.keys(allStories))
 
     const lastStory = allStories[lastStoryId]
-    if (lastStory.length >= 2) {
+    if (lastStory.length >= 3) {
       this._currentStoryId = lastStoryId + 1
     } else {
       this._currentStory = lastStory

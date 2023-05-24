@@ -25,7 +25,7 @@ class CurrentStory extends AppElement
       <section>
         <h2>The story in the making</h2>
         <one-story .story=${this.story}></one-story>
-        <story-form .storyId=${this.storyId} last />
+        <story-form .storyId=${this.storyId} ?last=${this.story?.length >= 2 } />
       </section>
     `
   }
