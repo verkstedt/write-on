@@ -3,10 +3,14 @@ import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.j
 import AppElement from '../utils/AppElement.mjs'
 
 function getInitials(name) {
+  const parts = []
   const nameArray = name.split(" ")
-  const firstNameIn = nameArray[0].charAt(0).toUpperCase()
-  const lastNameIn = nameArray[nameArray.length - 1].charAt(0).toUpperCase()
-  return [ firstNameIn, lastNameIn ].join('')
+  parts.push(nameArray[0].charAt(0))
+  if (nameArray.length > 1)
+  {
+    parts.push(nameArray[nameArray.length - 1].charAt(0))
+  }
+  return parts.join('').toUpperCase()
 }
 
 class WriterAvatar extends AppElement
