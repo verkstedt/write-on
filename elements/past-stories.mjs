@@ -20,7 +20,7 @@ class PastStories extends LitElement
         <p>Have a look at some of the stories others have already added</p>
 
         ${this.stories.map(story => html`
-          <details open>
+          <details>
             <summary>TODO Thumbnail of a story</summary>
 
             <one-story finished .story=${story}></one-story>

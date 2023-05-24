@@ -17,6 +17,7 @@ class StoryForm extends AppElement
 
     await add('sentences', Object.fromEntries(formData.entries()))
 
+    // FIXME Drill down a function that adds story part to the state from stories-container
     window.location.reload()
   }
 
