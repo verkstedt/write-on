@@ -60,6 +60,13 @@ class OneStory extends AppElement
         blockquote {
           border-left: none;
         }
+        .contribution {
+          background-color: var(--cmed);
+          margin-left: 3em;
+          padding: 1em 2em;
+          border-radius: 5px;
+        }
+
       </style>
       <section>
         ${this.story.map((part, idx) => html`
@@ -67,7 +74,7 @@ class OneStory extends AppElement
             <cite>
               <span class="inner">${getInitials(part.player)}</span>
             </cite>
-            <p>
+            <p class="contribution">
               <span class=${this.finished ? '' : 'censored'}>
                 ${part.sentenceHidden}
               </span>
