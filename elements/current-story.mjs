@@ -13,7 +13,7 @@ class CurrentStory extends AppElement
 
   render ()
   {
-    if (!this.story)
+    if (!this.storyId)
     {
       return html`
         ${super.stylesTemplate()}
@@ -25,7 +25,7 @@ class CurrentStory extends AppElement
       <section>
         <h2>The story in the making</h2>
         <one-story .story=${this.story}></one-story>
-        <story-form .storyId=${this.storyId} />
+        <story-form .storyId=${this.storyId} last />
       </section>
     `
   }

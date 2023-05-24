@@ -14,7 +14,6 @@ npx @11ty/eleventy-dev-server
 
 ## TODO
 
-- CSS
 - Avatar
 - past stories preview
 - ending the game

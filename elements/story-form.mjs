@@ -6,7 +6,8 @@ import { add } from '../utils/api.mjs'
 class StoryForm extends AppElement
 {
   static properties = {
-    storyId: {}
+    storyId: {},
+    last : { type:Boolean }
   }
 
   async handleSubmit (event)
@@ -17,6 +18,9 @@ class StoryForm extends AppElement
 
     await add('sentences', Object.fromEntries(formData.entries()))
 
+    if (this.last) {
+      alert("Congrats - Enjoy the whole story now 🎉")
+    }
     // FIXME Drill down a function that adds story part to the state from stories-container
     window.location.reload()
   }
