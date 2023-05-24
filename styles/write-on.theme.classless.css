@@ -1,3 +1,5 @@
+@import url('https://classless.de/classless.css');
+
 :root {
   --rem:    14pt;       /* the base size of 1rem */
   --width:  60rem;      /* container width */

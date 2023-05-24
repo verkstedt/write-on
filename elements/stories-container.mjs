@@ -42,8 +42,7 @@ class StoriesContainer extends LitElement
   {
     return html`
       <current-story .story=${this._currentStory}></current-story>
-
-        <past-stories .stories=${this._pastStories}></past-stories>
+      <past-stories .stories=${this._pastStories}></past-stories>
     `
   }
 }

@@ -27,8 +27,6 @@ class OneStory extends LitElement
       return html`Loading…`
     }
 
-    console.log(this.finished)
-
     return html`
       <style>
         .censored
