@@ -1,11 +1,12 @@
-import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
 
+import AppElement from '../utils/AppElement.mjs'
 import { getAll } from '../utils/api.mjs'
 
 import './current-story.mjs'
 import './past-stories.mjs'
 
-class StoriesContainer extends LitElement
+class StoriesContainer extends AppElement
 {
   static properties = {
     _currentStory: { state: true },
@@ -44,6 +45,7 @@ class StoriesContainer extends LitElement
   render ()
   {
     return html`
+      ${super.stylesTemplate()}
       <current-story
         .storyId=${this._currentStoryId}
         .story=${this._currentStory}

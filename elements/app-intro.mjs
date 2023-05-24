@@ -10,7 +10,7 @@ class AppIntro extends AppElement
     render ()
     {
         return html`
-        ${super.stylesTemplate()}
+            ${super.stylesTemplate()}
             <section>
               <h2>Rules? – Phhh, easy!</h2>
               <ol>

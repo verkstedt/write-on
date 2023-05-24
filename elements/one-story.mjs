@@ -1,8 +1,9 @@
-import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
 
+import AppElement from '../utils/AppElement.mjs'
 import formatDate from '../utils/formatDate.mjs'
 
-class OneStory extends LitElement
+class OneStory extends AppElement
 {
   static properties = {
     story: {},
@@ -21,10 +22,14 @@ class OneStory extends LitElement
   {
     if (!this.story)
     {
-      return html`Loading…`
+      return html`
+        ${super.stylesTemplate()}
+        Loading…
+      `
     }
 
     return html`
+      ${super.stylesTemplate()}
       <style>
         .censored
         {

@@ -16,8 +16,8 @@ class CurrentStory extends AppElement
     if (!this.story)
     {
       return html`
-      ${super.stylesTemplate()}
-      Loading…`
+        ${super.stylesTemplate()}
+        Loading…`
     }
 
     return html`
