@@ -28,9 +28,7 @@ class PastStories extends AppElement
         ${this.stories.map(story => html`
           <details>
             <summary>
-              (TODO: Avatar)
-
-              ${story[0].sentenceOpen}
+              <q>${story[0].sentenceOpen}</q> – <em>started by ${story[0].player}</em>
             </summary>
 
             <one-story finished .story=${story}></one-story>
