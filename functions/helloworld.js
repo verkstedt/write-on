@@ -1,4 +1,6 @@
 export function onRequest(context) {
-  console.log(context.request)
+  console.log('context')
+  console.log(context)
+  console.log('context')
   return new Response("Hello, world!")
 }
