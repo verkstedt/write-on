@@ -1,0 +1,18 @@
+:root {
+  --rem:    14pt;       /* the base size of 1rem */
+  --width:  60rem;      /* container width */
+  --navpos: absolute;   /* fixed | absolute */
+	--font-p: 300 1em/1.6 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	--font-h: 300 1em/1.3 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	--font-c: 86%/1.4 monospace;
+	--border: 1px solid var(--cmed);
+  --ornament: "‹‹ ››";  /* ornament content after sections */
+
+  --cfg:   #433;        /* foreground color for text  */
+  --cbg:   #fff;        /* background color for html  */
+  --cdark: #888;        /* dark gray for captions  */
+  --cmed:  #d1d1d1;     /* medium gray for borders, table separator  */
+  --clight:#f5f6f7;     /* light gray for different background (code) */
+  --clink: #07c;        /* color to indicate clickable elements */
+  --cemph: #088;        /* the primary emphasis color of the theme */
+}

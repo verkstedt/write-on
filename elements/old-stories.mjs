@@ -9,7 +9,7 @@ class OldStories extends LitElement
     {
         return html`
             <section>
-              <h2>Past stories</h2>
+              <h2>Past Stories</h2>
 
               TODO
             </section>
