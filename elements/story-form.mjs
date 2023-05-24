@@ -5,6 +5,7 @@ import { add } from '../utils/api.mjs'
 class StoryForm extends LitElement
 {
   static properties = {
+    storyId: {}
   }
 
   async handleSubmit (event)
@@ -13,7 +14,9 @@ class StoryForm extends LitElement
 
     const formData = new FormData(event.currentTarget);
 
-    await add('sentences')
+    await add('sentences', Object.fromEntries(formData.entries()))
+
+    window.location.reload()
   }
 
   render ()
@@ -27,10 +30,11 @@ class StoryForm extends LitElement
         }
       </style>
       <form @submit=${this.handleSubmit}>
+        <input type=hidden name="game" value=${this.storyId} />
         <label>
           <div>Name</div>
           <input
-            name="name"
+            name="player"
             required
             autocomplete="name"
           />
@@ -38,7 +42,7 @@ class StoryForm extends LitElement
         <label>
           <div>Part of the story that will be visible only at the end of the game</div>
           <textarea
-            name="hidden"
+            name="sentenceHidden"
             required
             rows={3}
             autoComplete="off"
@@ -47,7 +51,7 @@ class StoryForm extends LitElement
         <label>
           <div>Part of the story visible to next writer</div>
           <textarea
-            name="open"
+            name="sentenceOpen"
             required
             rows={2}
             autoComplete="off"

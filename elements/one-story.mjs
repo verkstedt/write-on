@@ -1,9 +1,6 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 
-const dateFormatter = new Intl.DateTimeFormat(undefined, {
-  dateStyle: 'short',
-  timeStyle: 'short',
-});
+import formatDate from '../utils/formatDate.mjs'
 
 class OneStory extends LitElement
 {
@@ -40,7 +37,7 @@ class OneStory extends LitElement
             <cite>
               ${part.player}
               at
-              ${dateFormatter.format(new Date(part.createdAt * 1000))}
+              ${formatDate(new Date(part.createdAt))}
             </cite>
             <p>
               <span class=${this.finished ? '' : 'censored'}>

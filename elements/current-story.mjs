@@ -6,6 +6,7 @@ import './story-form.mjs'
 class CurrentStory extends LitElement
 {
   static properties = {
+    storyId: {},
     story: { argument: false },
   }
 
@@ -20,7 +21,7 @@ class CurrentStory extends LitElement
       <section>
         <h2>The story in the making</h2>
         <one-story .story=${this.story}></one-story>
-        <story-form />
+        <story-form .storyId=${this.storyId} />
       </section>
     `
   }

@@ -9,6 +9,7 @@ class StoriesContainer extends LitElement
 {
   static properties = {
     _currentStory: { state: true },
+    _currentStoryId: { state: true },
     _pastStories: { state: true },
   }
 
@@ -16,6 +17,7 @@ class StoriesContainer extends LitElement
     super()
 
     this._currentStory = null
+    this._currentStoryId = null
     this._pastStories = null
 
     void this.fetchData()
@@ -34,6 +36,7 @@ class StoriesContainer extends LitElement
     const lastStoryId = Math.max(...Object.keys(allStories))
 
     this._currentStory = allStories[lastStoryId]
+    this._currentStoryId = lastStoryId
     delete allStories[lastStoryId]
     this._pastStories = Object.values(allStories)
   }
@@ -41,7 +44,10 @@ class StoriesContainer extends LitElement
   render ()
   {
     return html`
-      <current-story .story=${this._currentStory}></current-story>
+      <current-story
+        .storyId=${this._currentStoryId}
+        .story=${this._currentStory}
+      ></current-story>
       <past-stories .stories=${this._pastStories}></past-stories>
     `
   }
