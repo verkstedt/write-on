@@ -1,5 +1,11 @@
 @import url('https://classless.de/classless.css');
 
+/* Fix for chrome bug */
+::selection {
+  color: white;
+  background: black;
+}
+
 :root {
   --rem:    14pt;       /* the base size of 1rem */
   --width:  60rem;      /* container width */
