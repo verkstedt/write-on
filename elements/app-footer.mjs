@@ -10,7 +10,7 @@ class AppFooter extends LitElement
         return html`
             <footer>
               <center>
-                <small>© verkstedt</small>
+                <small>Made with ❤️ on an Open Wednesday by <a href="https://verkstedt.com">verkstedt</a></small>
               </center>
             </footer>
         `
