@@ -2,6 +2,8 @@ import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.j
 
 import AppElement from '../utils/AppElement.mjs'
 
+import './writer-avatar.mjs'
+
 class PastStories extends AppElement
 {
   static properties = {
@@ -28,7 +30,8 @@ class PastStories extends AppElement
         ${this.stories.map(story => html`
           <details>
             <summary>
-              <q>${story[0].sentenceOpen}</q> – <em>started by ${story[0].player}</em>
+              <writer-avatar .name=${story[0].player}></writer-avatar>
+              <q>${story[0].sentenceOpen}</q>
             </summary>
 
             <one-story finished .story=${story}></one-story>
