@@ -20,6 +20,7 @@ class PastStories extends AppElement
       `
     }
 
+
     return html`
       ${super.stylesTemplate()}
       <section>
@@ -27,16 +28,21 @@ class PastStories extends AppElement
 
         <p>Have a look at some of the stories others have already added</p>
 
-        ${this.stories.map(story => html`
-          <details>
-            <summary>
-              <writer-avatar .name=${story[0].player}></writer-avatar>
-              <q>${story[0].sentenceOpen}</q>
-            </summary>
+        ${this.stories.map(story => {
+            const players = new Set()
+            story.forEach(beat => { players.add(beat.player) })
+            const playerNames = Array.from(players)
+            return html`
+              <details>
+                <summary>
+                  ${playerNames.map(name => html`<writer-avatar .name=${name}></writer-avatar>`)}
+                  <q>${story[0].sentenceOpen}</q>
+                </summary>
 
-            <one-story finished .story=${story}></one-story>
-          </details>
-        `)}
+                <one-story finished .story=${story}></one-story>
+              </details>
+            `
+        }) }
       </section>
     `
   }
