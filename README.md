@@ -1,2 +1,11 @@
-# write-on
-Game of collaborative storymaking
+Write On
+========
+
+Game of collaborative storymaking.
+
+Run locally
+-----------
+
+```sh
+npx serve .
+```
