@@ -1,22 +1,30 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 
+import './one-story.mjs'
+
 class CurrentStory extends LitElement
 {
-    static properties = {
-    }
+  static properties = {
+    story: { argument: false },
+  }
 
-    render ()
+  render ()
+  {
+    if (!this.story)
     {
-        return html`
-            <section>
-              <h2>The story in the making</h2>
-
-              <p>TODO: Preview of the story so far</p>
-
-              <p>TODO: The form™</p>
-            </section>
-        `
+      return html`Loading…`
     }
+
+    return html`
+      <section>
+        <h2>The story in the making</h2>
+
+        <one-story .story=${this.story}></one-story>
+
+        <p>TODO: The form™</p>
+      </section>
+    `
+  }
 }
 
 customElements.define('current-story', CurrentStory)
