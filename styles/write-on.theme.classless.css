@@ -18,3 +18,16 @@
   --clink: #07c;        /* color to indicate clickable elements */
   --cemph: #088;        /* the primary emphasis color of the theme */
 }
+
+.title {
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 0;  
+  margin-bottom: 1.5em;  
+  font-size: 1.3em;
+  font-weight: 300;
+  font-style: italic;
+  font-variant: all-petite-caps;
+}
