@@ -1,6 +1,8 @@
-import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
 
-class AppHeader extends LitElement
+import AppElement from '../utils/AppElement.mjs'
+
+class AppHeader extends AppElement
 {
     static properties = {
       _numberOfRounds: { type: Number, state: true },
@@ -16,6 +18,7 @@ class AppHeader extends LitElement
     render ()
     {
         return html`
+            ${super.stylesTemplate()}
             <header>
               <h1 class="title">Write On ✍</h1>
               <h2 class="subtitle">An almost collaborative game of storywriting.</h2>

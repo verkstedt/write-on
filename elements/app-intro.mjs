@@ -1,6 +1,8 @@
-import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
 
-class AppIntro extends LitElement
+import AppElement from '../utils/AppElement.mjs'
+
+class AppIntro extends AppElement
 {
     static properties = {
     }
@@ -8,6 +10,7 @@ class AppIntro extends LitElement
     render ()
     {
         return html`
+        ${super.stylesTemplate()}
             <section>
               <h2>Rules? – Phhh, easy!</h2>
               <ol>

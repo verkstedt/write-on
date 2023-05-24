@@ -1,9 +1,10 @@
-import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
 
+import AppElement from '../utils/AppElement.mjs'
 import './one-story.mjs'
 import './story-form.mjs'
 
-class CurrentStory extends LitElement
+class CurrentStory extends AppElement
 {
   static properties = {
     storyId: {},
@@ -14,10 +15,13 @@ class CurrentStory extends LitElement
   {
     if (!this.story)
     {
-      return html`Loading…`
+      return html`
+      ${super.stylesTemplate()}
+      Loading…`
     }
 
     return html`
+      ${super.stylesTemplate()}
       <section>
         <h2>The story in the making</h2>
         <one-story .story=${this.story}></one-story>
