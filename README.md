@@ -7,5 +7,5 @@ Run locally
 -----------
 
 ```sh
-npx serve .
+npx @11ty/eleventy-dev-server .
 ```
