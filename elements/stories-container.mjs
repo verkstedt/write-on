@@ -45,7 +45,7 @@ class StoriesContainer extends AppElement
       delete allStories[lastStoryId]
     }
 
-    this._pastStories = Object.values(allStories)
+    this._pastStories = Object.values(allStories).reverse()
   }
 
   render ()
