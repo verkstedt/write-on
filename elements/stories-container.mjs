@@ -36,9 +36,15 @@ class StoriesContainer extends AppElement
 
     const lastStoryId = Math.max(...Object.keys(allStories))
 
-    this._currentStory = allStories[lastStoryId]
-    this._currentStoryId = lastStoryId
-    delete allStories[lastStoryId]
+    const lastStory = allStories[lastStoryId]
+    if (lastStory.length >= 2) {
+      this._currentStoryId = lastStoryId + 1
+    } else {
+      this._currentStory = lastStory
+      this._currentStoryId = lastStoryId
+      delete allStories[lastStoryId]
+    }
+
     this._pastStories = Object.values(allStories)
   }
 

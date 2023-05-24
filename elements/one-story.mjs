@@ -22,10 +22,7 @@ class OneStory extends AppElement
   {
     if (!this.story)
     {
-      return html`
-        ${super.stylesTemplate()}
-        Loading…
-      `
+      return null
     }
 
     return html`
