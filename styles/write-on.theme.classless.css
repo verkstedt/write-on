@@ -19,7 +19,7 @@
   --cfg:   #433;        /* foreground color for text  */
   --cbg:   #fff;        /* background color for html  */
   --cdark: #888;        /* dark gray for captions  */
-  --cmed:  #d1d1d1;     /* medium gray for borders, table separator  */
+  --cmed:  #ebebeb;     /* medium gray for borders, table separator  */
   --clight:#f5f6f7;     /* light gray for different background (code) */
   --clink: #07c;        /* color to indicate clickable elements */
   --cemph: #088;        /* the primary emphasis color of the theme */
