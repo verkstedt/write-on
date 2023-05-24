@@ -1,0 +1,21 @@
+{
+  "name": "write-on",
+  "version": "1.0.0",
+  "description": "An almost collaborative game of storywriting.",
+  "scripts": {
+    "dev": "npx @11ty/eleventy-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verkstedt/write-on.git"
+  },
+  "keywords": [
+    "storytelling"
+  ],
+  "author": "Verkstedt <hello@verkstedt.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/verkstedt/write-on/issues"
+  },
+  "homepage": "https://github.com/verkstedt/write-on#readme"
+}

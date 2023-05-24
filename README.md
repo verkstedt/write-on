@@ -1,11 +1,13 @@
-Write On
-========
+# Write On
 
-Game of collaborative storymaking.
+An almost collaborative game of storywriting.
 
-Run locally
------------
+_Project created on a verkstedt’s Open Wednesday._
+
+## Run locally
+
+You can use 11ty’s dev server which comes with hot reloading:
 
 ```sh
-npx @11ty/eleventy-dev-server .
+npx @11ty/eleventy-dev-server
 ```
