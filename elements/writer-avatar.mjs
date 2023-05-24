@@ -25,6 +25,7 @@ class WriterAvatar extends AppElement
           vertical-align: middle;
           background-color: var(--cemph);
           border-radius: 50%;
+          border: white solid thin;
         }
         .inner {
           color: white;

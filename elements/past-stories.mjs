@@ -33,6 +33,12 @@ class PastStories extends AppElement
             story.forEach(beat => { players.add(beat.player) })
             const playerNames = Array.from(players)
             return html`
+              <style>
+                writer-avatar:not(:first-child)
+                {
+                  margin-inline-start: -1em;
+                }
+              </style>
               <details>
                 <summary>
                   ${playerNames.map(name => html`<writer-avatar .name=${name}></writer-avatar>`)}
