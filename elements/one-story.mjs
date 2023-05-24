@@ -63,6 +63,7 @@ class OneStory extends AppElement
         .contribution {
           background-color: var(--cmed);
           margin-left: 3em;
+          margin-top: 0;
           padding: 1em 2em;
           border-radius: 5px;
         }
