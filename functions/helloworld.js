@@ -1,5 +1,9 @@
-export function onRequest(context) {
-  const { searchParams } = new URL(request.url)
-  let name = searchParams.get('name') ?? 'world'
-  return new Response(`Hello, ${name}! 👋`)
-}
+export default {
+  async fetch(
+    request: Request,
+    env: Env,
+    ctx: ExecutionContext
+  ): Promise<Response> {
+    return new Response("Hello World!");
+  },
+};
