@@ -1,5 +1,7 @@
 import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
 
+import { STORY_LENGTH } from '../consts/story.mjs'
+
 import AppElement from '../utils/AppElement.mjs'
 import { getAll } from '../utils/api.mjs'
 
@@ -37,7 +39,7 @@ class StoriesContainer extends AppElement
     const lastStoryId = Math.max(...Object.keys(allStories))
 
     const lastStory = allStories[lastStoryId]
-    if (lastStory.length >= 3) {
+    if (lastStory.length >= STORY_LENGTH) {
       this._currentStoryId = lastStoryId + 1
     } else {
       this._currentStory = lastStory
