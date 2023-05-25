@@ -7,7 +7,17 @@ class StoryForm extends AppElement
 {
   static properties = {
     storyId: {},
-    last : { type:Boolean }
+    last: { type: Boolean },
+    _name: { type: String, state: true },
+  }
+
+  static #NAME_STORAGE_KEY = 'name'
+
+  constructor ()
+  {
+    super()
+
+    this._name = localStorage.getItem(StoryForm.#NAME_STORAGE_KEY)
   }
 
   async handleSubmit (event)
@@ -15,6 +25,8 @@ class StoryForm extends AppElement
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+
+    localStorage.setItem(StoryForm.#NAME_STORAGE_KEY, formData.get('player'))
 
     await add('sentences', Object.fromEntries(formData.entries()))
 
@@ -43,6 +55,7 @@ class StoryForm extends AppElement
             name="player"
             required
             autocomplete="name"
+            value=${this._name}
           />
         </label>
         <label>
