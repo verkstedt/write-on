@@ -39,7 +39,7 @@ class WriterAvatar extends AppElement
           line-height: var(--size);
         }
       </style>
-      <span class="avatar">
+      <span class="avatar" title=${this.name}>
         ${getInitials(this.name)}
       </span>
     `
