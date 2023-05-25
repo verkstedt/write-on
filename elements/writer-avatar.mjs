@@ -24,27 +24,24 @@ class WriterAvatar extends AppElement
     return html`
       ${super.stylesTemplate()}
       <style>
-        cite {
+        .avatar {
+          --size: 2.5em;
+
           display: inline-block;
-          vertical-align: middle;
           background-color: var(--cemph);
-          border-radius: 50%;
-          border: white solid thin;
-        }
-        .inner {
           color: white;
-          display: table-cell;
-          vertical-align: middle;
+          border: white solid thin;
+          border-radius: 50%;
           text-align: center;
-          text-decoration: none;
-          height: 50px;
-          width: 50px;
           font-size: var(--rem);
+          min-height: var(--size);
+          min-width: var(--size);
+          line-height: var(--size);
         }
       </style>
-      <cite>
-        <span class="inner">${getInitials(this.name)}</span>
-      </cite>
+      <span class="avatar">
+        ${getInitials(this.name)}
+      </span>
     `
   }
 }

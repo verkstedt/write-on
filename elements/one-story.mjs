@@ -50,7 +50,7 @@ class OneStory extends AppElement
         blockquote {
           border-left: none;
         }
-        writer-avatar {
+        cite {
           margin-right: 25px;
           float: left;
         }
@@ -66,7 +66,9 @@ class OneStory extends AppElement
       <section>
         ${this.story.map((part, idx) => html`
           <blockquote>
-            <writer-avatar name=${part.player}></writer-avatar>
+            <cite>
+              <writer-avatar name=${part.player}></writer-avatar>
+            </cite>
             <p class="contribution">
               <span class=${this.finished ? '' : 'censored'}>
                 ${this.finished ? part.sentenceHidden : scramble(part.sentenceHidden)}
