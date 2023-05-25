@@ -46,6 +46,13 @@ class StoryForm extends AppElement
         {
           width: 100%;
         }
+
+        @media (min-width: 40em) {
+          form
+          {
+            margin-inline-start: 4em;
+          }
+        }
       </style>
       <form @submit=${this.handleSubmit}>
         <input type=hidden name="game" value=${this.storyId} />
