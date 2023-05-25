@@ -4,6 +4,20 @@ import AppElement from '../utils/AppElement.mjs'
 
 import './writer-avatar.mjs'
 
+function scramble (text)
+{
+  const words = text.split(/(?=[^\w]+)/).map(part => {
+    const [, nonWord, word] = part.match(/^(.*?)(\w*)$/)
+    const letters = word
+      .split('')
+      .map(letter => ({ letter, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ letter }) => letter)
+    return nonWord + letters.join('')
+  })
+  return words.join('')
+}
+
 class OneStory extends AppElement
 {
   static properties = {
@@ -55,7 +69,7 @@ class OneStory extends AppElement
             <writer-avatar name=${part.player}></writer-avatar>
             <p class="contribution">
               <span class=${this.finished ? '' : 'censored'}>
-                ${part.sentenceHidden}
+                ${this.finished ? part.sentenceHidden : scramble(part.sentenceHidden)}
               </span>
               <span class=${this.finished || idx === this.story.length - 1 ? '' : 'censored'}>
                 ${part.sentenceOpen}
