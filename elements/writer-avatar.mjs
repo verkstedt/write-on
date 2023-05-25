@@ -13,6 +13,21 @@ function getInitials(name) {
   return parts.join('').toUpperCase()
 }
 
+function getColor (name) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i += 1) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+
+  let color = '#';
+  for (let i = 0; i < 3; i += 1) {
+    const value = (hash >> (i * 8)) & 0xff;
+    color += `00${value.toString(16)}`.slice(-2);
+  }
+
+  return color;
+}
+
 class WriterAvatar extends AppElement
 {
   static properties = {
@@ -28,8 +43,8 @@ class WriterAvatar extends AppElement
           --size: 2.5em;
 
           display: inline-block;
-          background-color: var(--cemph);
-          color: white;
+          background-color: ${getColor(this.name)};
+          color: var(--cbg);
           border: white solid thin;
           border-radius: 50%;
           text-align: center;
@@ -37,6 +52,8 @@ class WriterAvatar extends AppElement
           min-height: var(--size);
           min-width: var(--size);
           line-height: var(--size);
+          text-shadow: 1px 1px var(--cdark);
+          font-weight: 375;
         }
       </style>
       <span class="avatar" title=${this.name}>
