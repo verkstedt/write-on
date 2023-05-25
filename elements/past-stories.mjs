@@ -44,7 +44,7 @@ class PastStories extends AppElement
               <details>
                 <summary>
                   ${playerNames.map(name => html`<writer-avatar .name=${name}></writer-avatar>`)}
-                  <q>${story[0].sentenceOpen}</q>
+                  <q>${story[0].sentenceHidden}</q>
                 </summary>
 
                 <one-story finished .story=${story}></one-story>
