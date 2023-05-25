@@ -16,7 +16,9 @@ class PastStories extends AppElement
     {
       return html`
         ${super.stylesTemplate()}
-        Loading…
+        <p>
+          Loading…
+        </p>
       `
     }
 

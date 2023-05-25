@@ -17,7 +17,10 @@ class CurrentStory extends AppElement
     {
       return html`
         ${super.stylesTemplate()}
-        Loading…`
+        <p>
+          Loading…
+        </p>
+      `
     }
 
     const start = !this.story?.length
