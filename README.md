@@ -11,9 +11,3 @@ You can use 11ty’s dev server which comes with hot reloading:
 ```sh
 npx @11ty/eleventy-dev-server
 ```
-
-## TODO
-
-- Avatar
-- past stories preview
-- ending the game
