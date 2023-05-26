@@ -30,12 +30,12 @@ class CurrentStory extends AppElement
 
     return html`
       ${super.stylesTemplate()}
-      <section>
-        <h2>
-          ${start ? 'Start a new story ✨' : 'The story in the making 📖'}</h2>
-        <one-story .story=${this.story}></one-story>
-        <story-form .storyId=${this.storyId} ?last=${end} />
-      </section>
+      <one-story .story=${this.story}>
+        <h2 slot="header">
+          ${start ? 'Start a new story ✨' : 'The story in the making 📖'}
+        </h2>
+        <story-form slot="footer" .storyId=${this.storyId} ?last=${end} />
+      </one-story>
     `
   }
 }

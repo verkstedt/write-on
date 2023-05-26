@@ -61,9 +61,9 @@ class OneStory extends AppElement
           padding: 1em 2em;
           border-radius: 5px;
         }
-
       </style>
       <section>
+        <slot name="header"></slot>
         ${this.story.map((part, idx) => html`
           <blockquote>
             <cite>
@@ -79,6 +79,7 @@ class OneStory extends AppElement
             </p>
           </blockquote>
         `)}
+        <slot name="footer"></slot>
       </section>
     `
   }
