@@ -29,16 +29,27 @@ class OneStory extends AppElement
   {
     super()
 
-    this.story = null
+    this.story = []
     this.finished = false
   }
 
   render ()
   {
-    if (!this.story)
-    {
-      return null
-    }
+    const partsHtml = this.story.map((part, idx) => html`
+      <blockquote>
+        <cite>
+          <writer-avatar name=${part.player}></writer-avatar>
+        </cite>
+        <p class="contribution">
+          <span class=${this.finished ? '' : 'censored'}>
+            ${this.finished ? part.sentenceHidden : scramble(part.sentenceHidden)}
+          </span>
+          <span class=${this.finished || idx === this.story.length - 1 ? '' : 'censored'}>
+            ${part.sentenceOpen}
+          </span>
+        </p>
+      </blockquote>
+    `)
 
     return html`
       ${super.stylesTemplate()}
@@ -64,21 +75,7 @@ class OneStory extends AppElement
       </style>
       <section>
         <slot name="header"></slot>
-        ${this.story.map((part, idx) => html`
-          <blockquote>
-            <cite>
-              <writer-avatar name=${part.player}></writer-avatar>
-            </cite>
-            <p class="contribution">
-              <span class=${this.finished ? '' : 'censored'}>
-                ${this.finished ? part.sentenceHidden : scramble(part.sentenceHidden)}
-              </span>
-              <span class=${this.finished || idx === this.story.length - 1 ? '' : 'censored'}>
-                ${part.sentenceOpen}
-              </span>
-            </p>
-          </blockquote>
-        `)}
+        ${partsHtml}
         <slot name="footer"></slot>
       </section>
     `

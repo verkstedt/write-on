@@ -19,7 +19,7 @@ class StoriesContainer extends AppElement
   constructor () {
     super()
 
-    this._currentStory = null
+    this._currentStory = []
     this._currentStoryId = null
     this._pastStories = null
 
@@ -40,6 +40,7 @@ class StoriesContainer extends AppElement
 
     const lastStory = allStories[lastStoryId]
     if (lastStory.length >= STORY_LENGTH) {
+      this._currentStory = []
       this._currentStoryId = lastStoryId + 1
     } else {
       this._currentStory = lastStory
