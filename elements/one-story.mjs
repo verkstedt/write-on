@@ -41,12 +41,24 @@ class OneStory extends AppElement
           <writer-avatar name=${part.player}></writer-avatar>
         </cite>
         <p class="contribution">
-          <span class=${this.finished ? '' : 'censored'}>
-            ${this.finished ? part.sentenceHidden : scramble(part.sentenceHidden)}
-          </span>
-          <span class=${this.finished || idx === this.story.length - 1 ? '' : 'censored'}>
-            ${part.sentenceOpen}
-          </span>
+          ${
+            !part.sentenceHidden
+              ? null
+              : html`
+                  <span class=${this.finished ? '' : 'censored'}>
+                    ${this.finished ? part.sentenceHidden : scramble(part.sentenceHidden)}
+                  </span>
+                `
+          }
+          ${
+            !part.sentenceOpen
+              ? null
+              : html`
+                  <span class=${this.finished || idx === this.story.length - 1 ? '' : 'censored'}>
+                    ${part.sentenceOpen}
+                  </span>
+                `
+          }
         </p>
       </blockquote>
     `)
