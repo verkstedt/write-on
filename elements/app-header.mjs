@@ -1,4 +1,4 @@
-import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
+import { html } from 'lit'
 
 import { STORY_LENGTH } from '../consts/story.mjs'
 

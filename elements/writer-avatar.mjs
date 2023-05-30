@@ -1,4 +1,4 @@
-import { html, styleMap } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js'
+import { html, styleMap } from 'lit'
 
 import AppElement from '../utils/AppElement.mjs'
 

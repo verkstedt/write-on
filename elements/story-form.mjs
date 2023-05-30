@@ -1,4 +1,4 @@
-import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { html } from 'lit';
 
 import AppElement from '../utils/AppElement.mjs'
 import { add } from '../utils/api.mjs'
