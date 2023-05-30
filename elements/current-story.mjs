@@ -18,7 +18,6 @@ class CurrentStory extends AppElement
     if (!this.storyId)
     {
       return html`
-        ${super.stylesTemplate()}
         <p>
           Loading…
         </p>
@@ -29,7 +28,6 @@ class CurrentStory extends AppElement
     const end = this.story?.length >= STORY_LENGTH - 1
 
     return html`
-      ${super.stylesTemplate()}
       <one-story .story=${this.story}>
         <h2 slot="header">
           ${start ? 'Start a new story ✨' : 'The story in the making 📖'}

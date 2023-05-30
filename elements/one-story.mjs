@@ -52,7 +52,6 @@ class OneStory extends AppElement
     `)
 
     return html`
-      ${super.stylesTemplate()}
       <style>
         .censored
         {

@@ -54,7 +54,6 @@ class StoriesContainer extends AppElement
   render ()
   {
     return html`
-      ${super.stylesTemplate()}
       <current-story
         .storyId=${this._currentStoryId}
         .story=${this._currentStory}

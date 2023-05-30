@@ -40,7 +40,6 @@ class StoryForm extends AppElement
   render ()
   {
     return html`
-      ${super.stylesTemplate()}
       <style>
         textarea
         {

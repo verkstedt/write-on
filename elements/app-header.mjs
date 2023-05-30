@@ -12,7 +12,6 @@ class AppHeader extends AppElement
     render ()
     {
         return html`
-            ${super.stylesTemplate()}
             <header>
               <h1 class="title">Write On ✍</h1>
               <h2 class="subtitle">An almost collaborative game of storywriting.</h2>

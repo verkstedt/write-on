@@ -10,7 +10,6 @@ class AppFooter extends AppElement
     render ()
     {
         return html`
-            ${super.stylesTemplate()}
             <footer>
               <center>
                 <small>Made with ❤️ on an Open Wednesday by <a href="https://verkstedt.com">verkstedt</a></small>
