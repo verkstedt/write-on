@@ -28,12 +28,19 @@ class CurrentStory extends AppElement
     const start = !this.story?.length
     const end = this.story?.length >= STORY_LENGTH - 1
 
+    let heading
+    if (start) {
+      heading = 'Start a new story ✨'
+    } else if (end) {
+      heading = 'Finish the story ✍'
+    } else {
+      heading = 'The story in the making 📖'
+    }
+
     return html`
       ${super.stylesTemplate()}
       <one-story .story=${this.story}>
-        <h2 slot="header">
-          ${start ? 'Start a new story ✨' : 'The story in the making 📖'}
-        </h2>
+        <h2 slot="header">${heading}</h2>
         <story-form slot="footer" .storyId=${this.storyId} ?last=${end} />
       </one-story>
     `

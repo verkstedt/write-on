@@ -65,24 +65,40 @@ class StoryForm extends AppElement
             value=${this._name}
           />
         </label>
-        <label>
-          <div>Part of the story that will be visible only at the end of the game</div>
-          <textarea
-            name="sentenceHidden"
-            required
-            rows={3}
-            autoComplete="off"
-          ></textarea>
-        </label>
-        <label>
-          <div>Part of the story visible to next writer</div>
-          <textarea
-            name="sentenceOpen"
-            required
-            rows={2}
-            autoComplete="off"
-          ></textarea>
-        </label>
+        ${
+          this.last
+            ? html`
+                <label>
+                  <div>The end of the story</div>
+                  <textarea
+                    name="sentenceOpen"
+                    required
+                    rows={2}
+                    autoComplete="off"
+                  ></textarea>
+                </label>
+              `
+            : html`
+              <label>
+                <div>Part of the story that will be visible only at the end of the game</div>
+                <textarea
+                  name="sentenceHidden"
+                  required
+                  rows={3}
+                  autoComplete="off"
+                ></textarea>
+              </label>
+              <label>
+                <div>Part of the story visible to next writer</div>
+                <textarea
+                  name="sentenceOpen"
+                  required
+                  rows={2}
+                  autoComplete="off"
+                ></textarea>
+              </label>
+            `
+        }
         <div>
           <button type="submit">
             Submit
