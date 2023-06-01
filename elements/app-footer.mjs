@@ -1,4 +1,4 @@
-import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
+import { html } from 'lit'
 
 import AppElement from '../utils/AppElement.mjs'
 
@@ -10,7 +10,6 @@ class AppFooter extends AppElement
     render ()
     {
         return html`
-            ${super.stylesTemplate()}
             <footer>
               <center>
                 <small>Made with ❤️ on an Open Wednesday by <a href="https://verkstedt.com">verkstedt</a></small>

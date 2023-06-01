@@ -1,4 +1,4 @@
-import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
+import { html, styleMap } from 'lit'
 
 import AppElement from '../utils/AppElement.mjs'
 
@@ -37,13 +37,11 @@ class WriterAvatar extends AppElement
   render ()
   {
     return html`
-      ${super.stylesTemplate()}
       <style>
         .avatar {
           --size: 2.5em;
 
           display: inline-block;
-          background-color: ${getColor(this.name)};
           color: var(--cbg);
           border: white solid thin;
           border-radius: 50%;
@@ -56,7 +54,11 @@ class WriterAvatar extends AppElement
           font-weight: 375;
         }
       </style>
-      <span class="avatar" title=${this.name}>
+      <span
+        class="avatar"
+        title=${this.name}
+        style=${styleMap({ backgroundColor: getColor(this.name) })}
+      >
         ${getInitials(this.name)}
       </span>
     `

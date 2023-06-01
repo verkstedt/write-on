@@ -1,4 +1,4 @@
-import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
+import { html } from 'lit'
 
 import AppElement from '../utils/AppElement.mjs'
 
@@ -10,7 +10,6 @@ class AppIntro extends AppElement
     render ()
     {
         return html`
-            ${super.stylesTemplate()}
             <section>
               <h2>Rules? – Phhh, easy!</h2>
               <ol>

@@ -1,4 +1,4 @@
-import { html } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js'
+import { html } from 'lit'
 
 import AppElement from '../utils/AppElement.mjs'
 
@@ -15,7 +15,6 @@ class PastStories extends AppElement
     if (!this.stories)
     {
       return html`
-        ${super.stylesTemplate()}
         <p>
           Loading…
         </p>
@@ -24,7 +23,6 @@ class PastStories extends AppElement
 
 
     return html`
-      ${super.stylesTemplate()}
       <section>
         <h2>Past stories</h2>
 
