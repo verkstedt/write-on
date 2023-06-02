@@ -1,32 +1,36 @@
-<script type="importmap">
-{"imports": {
-  "lit": "https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js"
-}}
-</script>
+<html lang="en">
+  <head>
+    <script type="importmap">
+    {"imports": {
+      "lit": "https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js"
+    }}
+    </script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Write On — An almost collaborative game of storywriting.</title>
+    <title>Write On — An almost collaborative game of storywriting</title>
 
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="/styles/write-on.theme.classless.css"
->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/styles/write-on.theme.classless.css"
+    >
 
-<script type="module">
-  import './elements/app-header.mjs'
-  import './elements/app-intro.mjs'
-  import './elements/stories-container.mjs'
-  import './elements/app-footer.mjs'
-</script>
+    <script type="module">
+      import './elements/app-header.mjs'
+      import './elements/app-intro.mjs'
+      import './elements/stories-container.mjs'
+      import './elements/app-footer.mjs'
+    </script>
+  </head>
 
-<body>
-  <app-header></app-header>
+  <body>
+    <app-header></app-header>
 
-  <app-intro></app-intro>
+    <app-intro></app-intro>
 
-  <stories-container></stories-container>
+    <stories-container></stories-container>
 
-  <app-footer></app-footer>
-</body>
+    <app-footer></app-footer>
+  </body>
+</html>
