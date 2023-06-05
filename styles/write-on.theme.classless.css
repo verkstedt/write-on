@@ -17,7 +17,6 @@
   --font-c: 86%/1.4 monospace;
   --border: 1px solid var(--cmed);
   --ornament: '‹‹ ››'; /* ornament content after sections */
-
   --cfg: #433; /* foreground color for text  */
   --cbg: #fff; /* background color for html  */
   --cdark: #888; /* dark gray for captions  */
