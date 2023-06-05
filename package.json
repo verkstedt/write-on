@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "description": "An almost collaborative game of storywriting.",
   "scripts": {
-    "dev": "npx @11ty/eleventy-dev-server"
+    "dev": "npx @11ty/eleventy-dev-server",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "stylelint '**/*.css'",
+    "lint:js": "eslint .",
+    "lint:html": "prettier --check '**/*.html'",
+    "fix": "npm run fix:css && npm run fix:js",
+    "fix:css": "stylelint --fix '**/*.css'",
+    "fix:js": "eslint --fix .",
+    "fix:html": "prettier --write '**/*.html'"
   },
   "repository": {
     "type": "git",
@@ -19,8 +27,9 @@
   },
   "homepage": "https://github.com/verkstedt/write-on#readme",
   "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.8",
-    "stylelint": "^15.6.3",
-    "stylelint-config-standard": "^33.0.0"
+    "stylelint": "^15.6.3"
   }
 }

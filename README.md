@@ -32,17 +32,22 @@ informational and not automatically enforced anywhere.
 
 ## Linting
 
-There is simple [prettier][prettier-doc] config in place.
+There are simple [EsLint] / [Prettier] and [StyleLint] configs in place.
 
-It’s encouraged to have your editor set up so it uses it to format on
-save, but it’s not enforced anywhere (no hooks, no CI). If you’d like
-hooks that check it on commit and push, you can use
-[`@saji/git-hooks`][@saji/git-hooks] (run `npx @saji/git-hooks`).
+You will probably need to run `npm install` to make use of them.
 
-If you don’t have `prettier` installed globally, you can run `npm install`.
+It’s encouraged to have your editor set up so it auto–formats using
+EsLint and StyleLint on save, but it’s not enforced anywhere (no hooks,
+no CI). If you’d like hooks that check it on commit and push, you can
+use [`@saji/git-hooks`][@saji/git-hooks] (run `npx @saji/git-hooks`).
+
+You can run `npm run lint` to lint the whole project on `npm run fix`
+to auto–fix any linting errors.
 
 [verkstedt]: https://verkstedt.com/about-us/
 [classless]: https://classless.de
 [lit]: https://lit.dev
-[prettier-doc]: https://prettier.io/docs/en/
+[eslint]: https://eslint.org/docs/latest/
+[prettier]: https://prettier.io/docs/en/
+[stylelint]: https://stylelint.io
 [@saji/git-hooks]: https://www.npmjs.com/@saji/git-hooks
