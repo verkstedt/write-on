@@ -23,6 +23,13 @@ _No_ need to run `npm install`.
     - CSS baseline ([classless]) and web component framework ([lit])
   - Use native browser technologies
 
+## Browser support
+
+Since this is mostly for prototyping, we aim for supporting only
+[relatively small group of browsers](./browserslist) that have
+features we want to use here. Note that this browserslist is purely
+informational and not automatically enforced anywhere.
+
 ## Linting
 
 There is simple [prettier][prettier-doc] config in place.

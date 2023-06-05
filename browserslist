@@ -1,0 +1,3 @@
+# Paste on https://browsersl.ist to see list of browsers
+# TODO Include :where <https://caniuse.com/mdn-css_selectors_where> when it becomes selectable <https://github.com/browserslist/caniuse-lite/tree/main/data/features>
+supports es6-module and supports custom-elementsv1 and supports import-maps and supports css-logical-props and supports css-container-queries
