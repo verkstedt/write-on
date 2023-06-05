@@ -2,5 +2,5 @@ export function onRequest(context) {
   // console.log('context')
   console.log(JSON.stringify(context))
   // console.log('context')
-  return new Response("Hello, world!")
+  return new Response('Hello, world!')
 }

@@ -6,22 +6,15 @@ import AppElement from '../utils/AppElement.mjs'
 import './one-story.mjs'
 import './story-form.mjs'
 
-class CurrentStory extends AppElement
-{
+class CurrentStory extends AppElement {
   static properties = {
     storyId: {},
     story: { argument: false },
   }
 
-  render ()
-  {
-    if (!this.storyId)
-    {
-      return html`
-        <p>
-          Loading…
-        </p>
-      `
+  render() {
+    if (!this.storyId) {
+      return html` <p>Loading…</p> `
     }
 
     const start = !this.story?.length

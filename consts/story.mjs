@@ -1,1 +1,1 @@
-export const STORY_LENGTH = 3;
+export const STORY_LENGTH = 3

@@ -4,13 +4,12 @@ import AppElement from '../utils/AppElement.mjs'
 
 import './writer-avatar.mjs'
 
-function scramble (text)
-{
-  const words = text.split(/(?=[^\w]+)/).map(part => {
+function scramble(text) {
+  const words = text.split(/(?=[^\w]+)/).map((part) => {
     const [, nonWord, word] = part.match(/^(.*?)(\w*)$/)
     const letters = word
       .split('')
-      .map(letter => ({ letter, sort: Math.random() }))
+      .map((letter) => ({ letter, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ letter }) => letter)
     return nonWord + letters.join('')
@@ -18,55 +17,55 @@ function scramble (text)
   return words.join('')
 }
 
-class OneStory extends AppElement
-{
+class OneStory extends AppElement {
   static properties = {
     story: {},
     finished: { type: Boolean },
   }
 
-  constructor ()
-  {
+  constructor() {
     super()
 
     this.story = []
     this.finished = false
   }
 
-  render ()
-  {
-    const partsHtml = this.story.map((part, idx) => html`
-      <blockquote>
-        <cite>
-          <writer-avatar name=${part.player}></writer-avatar>
-        </cite>
-        <p class="contribution">
-          ${
-            !part.sentenceHidden
+  render() {
+    const partsHtml = this.story.map(
+      (part, idx) => html`
+        <blockquote>
+          <cite>
+            <writer-avatar name=${part.player}></writer-avatar>
+          </cite>
+          <p class="contribution">
+            ${!part.sentenceHidden
               ? null
               : html`
                   <span class=${this.finished ? '' : 'censored'}>
-                    ${this.finished ? part.sentenceHidden : scramble(part.sentenceHidden)}
+                    ${this.finished
+                      ? part.sentenceHidden
+                      : scramble(part.sentenceHidden)}
                   </span>
-                `
-          }
-          ${
-            !part.sentenceOpen
+                `}
+            ${!part.sentenceOpen
               ? null
               : html`
-                  <span class=${this.finished || idx === this.story.length - 1 ? '' : 'censored'}>
+                  <span
+                    class=${this.finished || idx === this.story.length - 1
+                      ? ''
+                      : 'censored'}
+                  >
                     ${part.sentenceOpen}
                   </span>
-                `
-          }
-        </p>
-      </blockquote>
-    `)
+                `}
+          </p>
+        </blockquote>
+      `
+    )
 
     return html`
       <style>
-        .censored
-        {
+        .censored {
           filter: blur(0.5ex);
         }
         blockquote {

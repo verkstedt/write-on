@@ -8,15 +8,14 @@ import { getAll } from '../utils/api.mjs'
 import './current-story.mjs'
 import './past-stories.mjs'
 
-class StoriesContainer extends AppElement
-{
+class StoriesContainer extends AppElement {
   static properties = {
     _currentStory: { state: true },
     _currentStoryId: { state: true },
     _pastStories: { state: true },
   }
 
-  constructor () {
+  constructor() {
     super()
 
     this._currentStory = []
@@ -26,7 +25,7 @@ class StoriesContainer extends AppElement
     void this.fetchData()
   }
 
-  async fetchData () {
+  async fetchData() {
     const sentences = await getAll('sentences')
     const allStories = {}
     sentences.forEach(({ game: storyId, ...sentence }) => {
@@ -51,8 +50,7 @@ class StoriesContainer extends AppElement
     this._pastStories = Object.values(allStories).reverse()
   }
 
-  render ()
-  {
+  render() {
     return html`
       <current-story
         .storyId=${this._currentStoryId}
@@ -64,4 +62,3 @@ class StoriesContainer extends AppElement
 }
 
 customElements.define('stories-container', StoriesContainer)
-
